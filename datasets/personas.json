@@ -1,0 +1,8 @@
+[
+    {"name": "Nombre", "type": "STRING"},
+    {"name": "Apellido", "type": "STRING"},
+    {"name": "Edad", "type": "INTEGER"},
+    {"name": "Nacimiento", "type": "DATE"},
+    {"name": "Altura", "type": "INTEGER"},
+    {"name": "Sexo", "type": "STRING"}
+  ]
