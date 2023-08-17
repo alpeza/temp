@@ -5,4 +5,4 @@
     {"name": "Nacimiento", "type": "DATE"},
     {"name": "Altura", "type": "INTEGER"},
     {"name": "Sexo", "type": "STRING"}
-  ]
+]

@@ -1,11 +1,16 @@
 version: '3.8'
 services:
   bq:
-    image: google/cloud-sdk:latest
-    command: [ "tail", "-f", "/dev/null" ]
+    image: gutils
+    #command: [ "tail", "-f", "/dev/null" ]
+    ports:
+      - "2200:22"
     volumes:
       - ./service_account_key.json:/root/.config/gcloud/application_default_credentials.json
-      - ../datasets:/home/datasets
       - ./scripts:/home/scripts
     environment:
       - GOOGLE_APPLICATION_CREDENTIALS=/root/.config/gcloud/application_default_credentials.json
+      - mi_dataset=miDataset
+      - mi_tabla=tablaEjemplo
+      - ruta_esquema=./personas.json
+      - ruta_ficheros_temporales_para_cargar=/home/examplecsv

@@ -1,0 +1,21 @@
+# Utiliza la imagen base
+FROM google/cloud-sdk:latest
+
+# Actualiza los repositorios y instala curl
+RUN apt-get update && apt-get install -y curl
+
+# Descarga e instala Node.js 18
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+RUN apt-get install -y nodejs
+
+# Instala pm2 globalmente usando npm
+RUN npm install -g pm2
+
+# Instalación del programa de generación de ficheros
+COPY ./dataGen /app/dataGen
+WORKDIR /app/dataGen
+RUN npm install
+
+WORKDIR /home
+
+

@@ -21,6 +21,8 @@ if ! bq show "$nombre_dataset" >/dev/null 2>&1; then
   bq mk --dataset "$nombre_dataset"
 fi
 
+
+
 # Verificar si la tabla ya existe en BigQuery
 if bq show "$nombre_dataset.$nombre_tabla" >/dev/null 2>&1; then
   echo "La tabla $nombre_dataset.$nombre_tabla ya existe en BigQuery."
@@ -30,5 +32,3 @@ fi
 # Crear la tabla en BigQuery utilizando el archivo JSON de esquema
 echo "Creando la tabla $nombre_dataset.$nombre_tabla en BigQuery..."
 bq mk --table "$nombre_dataset.$nombre_tabla" "$ruta_esquema_json"
-
-echo "Tabla creada exitosamente en BigQuery."
